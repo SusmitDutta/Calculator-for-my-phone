@@ -12,23 +12,27 @@ import android.widget.EditText;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText display;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        display = findViewById(R.id.input);
+        EditText display = findViewById(R.id.input);
 
         display.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if
-            }
-        }
+                if ( getString(R.string.Display).equals(display.getText().toString())){
+                    display.setText("");
+                }
 
-    });
+
+
+            }
+        });
+
+    };
     public void ZeroBTN( View view){
 
     }
@@ -84,13 +88,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void EqualsBTN( View view){
-        String userExp = display.getText().toString();
 
-        Expression exp = new Expression(userExp);
-
-        String result = String.valueOf(exp.calculate());
-        display.setText(result);
-        display.setSelection(result.length());
 
 
 
